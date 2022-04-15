@@ -1,0 +1,18 @@
+1) Temática - Páginas de referenci 	-Kaggle - datasets
+					-Google data set
+					-Github Api
+					-Ine
+
+
+2) Extraer datos (3 fuentes de datos, 2 métodos de extración)	- Archivos(csv, json)
+								- Api
+								- Rss
+								- Escrapeo
+
+3) Transformación y agregación 
+
+
+4) Cargar datos en base de datos(SQL, Mongo)
+
+
+					
