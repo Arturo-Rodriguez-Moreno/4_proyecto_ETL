@@ -1,42 +1,53 @@
-![blockbuster.jpg](images/blockbuster.jpg)
+![nba75.jpg](images/nba75.jpg)
 
 
-# Proyecto base de datos SQL
+# Proyecto ETL
 ## Introducción:
 
-En el siguiente proyecto se me ha encargado realizar una base de datos de un videoclub partiendo de algunos archivos csv, al que tendré que añadir alguno más. Para ello utilizaré la librería de pandas para explorar, limpiar y modificar los datos y convertirlos en dataframes.
 
-Una vez conocidos los datos diseñaré la estructura de la base de datos con sus respectivas realaciones. La crearé, introduciré los datos y para terminar relacionaré cada una de las tablas.
+En el siguinte proyecto se me ha encargado como objetivo extraer datos de 3 fuentes diferentes y utilizando varias tecnicas de extranción, para a posteriori tranformarlos y por último cargarlos a una base de datos.
 
-Por último realizaré una serie de consultas para ver que la base de datos esta perfectamente bien contruida y aprovecharé para hacer alguno análisis de los datos
+El tema que he escogido es la NBA, más en particular estadísticas completas de los partidos desde el año 2004 hasta el 2020. Para ello utilizaré diferentes fuentes, en una de ellas descargaré directamente archivos en csv, otra será una API y por último scrapearé una web.
+
+
 
 ## Fuentes de los datos:
 
- - Ironhack
- - https://extendsclass.com/csv-generator.html
+ - https://www.kaggle.com/datasets/nathanlauga/nba-games
+ - https://www.balldontlie.io/#get-all-players
+ - https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
 
 ## Objetivos:
 
-- Importar, explorar y limpiar los datos.
+- Recopilar datos de 3 fuentes y 3 técnicas de extracción. 
+- Explorar, limpiar y transformar los datos.
 - Diseñar, crear y alimentar la base de datos.
-- Realizar consultas para analizar los datos.
+
 
 ## Entregables:
 
-- `explore_clean_data.ipynb` 
-- `create_db_insert_data.ipynb`
-- `selects.ipynb`
-- `blockbuster_diagram.sql`
+- `extraction.ipynb` 
+- `clean_data.ipynb`
+- `import_db.ipynb`
 
 
 
-## Exploración y limpieza:
+## Extracción de datos:
 
-Comienzo importando todos los csv a un jupyter notebook y los guardo como dataframes de pandas para revisar de que datos se tratan. 
+Como primera fuente de datos utilizo la web de kaggle, en la que me descargo una serie de archivos de csv que serán el punto de partida de mi base de datos, entre ellos se encuentran estadisticas de partidos por equipos e individualizada por jugadores.
 
-Continuo limpiando los datos, eliminado columnas con datos nulos y cambiando el tipo de datos.
+Otra de las fuentes de datos es la api de balldontlie, en la que extraeré ayudandome de la biblioteca request de datos de los jugadores como posición, estatura y peso.
 
-Creo algún dataset mas que necesitaré mas tarde, para todo ello utilizo pandas y numpy.
+Por último en wikipedia mediante scrapeo a través de Selenium me haré con una tabla de información sobre las ciudades de Estados Unidos.
+        
+
+
+## Exploración, limpieza y transformación:
+
+Comienzo importando todos los csv a un jupyter notebook y los guardo como dataframes de pandas para revisar los datos. Hago lo mismo con los json procedentes de la api y con la tabla extraida del scrapeo 
+
+Continuo limpiando y gestionando los datos nulos, modificando y cambiando el tipo de datos y uniendo alguna de tablas.
+
 
 
 ## Diseño y creación de la base de datos:
@@ -44,13 +55,9 @@ Creo algún dataset mas que necesitaré mas tarde, para todo ello utilizo pandas
 
 Primero me diseño la estructura de la base de datos en un papel y cuando tengo claro cuales son las primary y foreign keys de cada tabla me dispongo a generarla en mySQL
 
-Para ello utilizo otra vez jupyter nootebook y me ayudo de mysql-conector y sqlalchemy para realizarlo de forma automatizada. Primero creo la base de dato, luego las tablas, le inserto los datos y termino alterando las tablas con las relaciones.
+Para ello utilizo otra vez jupyter nootebook y me ayudo de mysql-conector para realizarlo de forma automatizada. Primero creo la base de dato, luego las tablas con sus relaciones y por último le inserto los datos.
 
 
-## Consulta y análisis:
-
-Por último realizo una serie de queries en jupyter notebook con el motor de sqlalchemy para comprobar que todo está en orden y aprovecho para analizar algunos datos unicamente con join, where, group by, order by...
-        
 
 ## Enlaces y Recursos:
 
@@ -62,7 +69,14 @@ Por último realizo una serie de queries en jupyter notebook con el motor de sql
 - https://matplotlib.org/
 - https://seaborn.pydata.org/
 - https://pandas.pydata.org/docs/
-- https://www.sqlalchemy.org/library.html
+- https://docs.python-requests.org/en/latest/
 - https://dev.mysql.com/doc/connector-python/en/
+- https://selenium-python.readthedocs.io/
 
 
+
+
+
+```python
+
+```
